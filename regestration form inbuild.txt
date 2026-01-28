@@ -32,6 +32,7 @@ if request.method == 'GET':
         print(request.POST)
         form= UserCreationForm(request.POST)
         if form.is_valid():
+             form.save()
             return HttpResponse('form is submited sucessfully ')
         else:
             return HttpResponse('form is invallid')
@@ -52,3 +53,4 @@ if request.method == 'GET':
 
 </body>
 </html>
+
